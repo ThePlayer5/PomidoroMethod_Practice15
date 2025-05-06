@@ -45,7 +45,7 @@ namespace PomidoroMethod
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
+            UpdateCounter();
         }
 
         private void CheckBox_Changed(object sender, RoutedEventArgs e)
@@ -55,7 +55,11 @@ namespace PomidoroMethod
 
         private void DeleteTaskBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (sender is Button btn && btn.DataContext is TodoItem item)
+            {
+                Tasks.Remove(item);
+                UpdateCounter();
+            }
         }
         public void UpdateCounter()
         {
