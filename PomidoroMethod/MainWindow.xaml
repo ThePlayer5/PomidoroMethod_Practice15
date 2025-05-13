@@ -19,25 +19,33 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical"
-            Margin="0 0 0 10">
+                    Margin="0 0 0 10">
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="TaskInputTb"
-                 Width="250"
-                 Height="30"
-                 Margin="0 0 10 0"/>
+                         Width="250"
+                         Height="30"
+                         Margin="0 0 10 0"/>    
                 <Button x:Name="AddTaskBtn"
-                Content="Добавить"
-                Width="100"
-                Click="AddTaskBtn_Click"/>
+                        Content="Добавить"
+                        Width="100"
+                        Click="AddTaskBtn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0 10 0 0">
                 <Button Content="Старт"
-                        Padding="20 10"/>
+                        Padding="20 10"
+                        x:Name="StartBtn"
+                        Click="StartBtn_Click"/>
                 <Button Content="Сброс"
                         Padding="20 10"
-                        Margin="10 0 0 0"/>
+                        Margin="10 0 0 0"
+                        x:Name="StopBtn"
+                        Click="StopBtn_Click"/>
             </StackPanel>
+            <TextBlock Text="25:00"
+                       Height="30"
+                       x:Name="TimerText"
+                       />
         </StackPanel>
 
         <ListBox x:Name="TaskListLb"

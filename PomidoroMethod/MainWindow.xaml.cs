@@ -22,6 +22,7 @@ namespace PomidoroMethod
     /// </summary>
     public partial class MainWindow : Window
     {
+        private TimeSpan _MyTime = new TimeSpan(0, 0, 25);
         public ObservableCollection<TodoItem> Tasks { get; set; } = new ObservableCollection<TodoItem>();
         public MainWindow()
         {
@@ -48,11 +49,6 @@ namespace PomidoroMethod
             UpdateCounter();
         }
 
-        private void CheckBox_Changed(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void DeleteTaskBtn_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is TodoItem item)
@@ -72,6 +68,16 @@ namespace PomidoroMethod
                 }
             }
             CounterTextTbl.Text = $"Осталось дел: {counter}";
+        }
+
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void StopBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
     public class TodoItem
