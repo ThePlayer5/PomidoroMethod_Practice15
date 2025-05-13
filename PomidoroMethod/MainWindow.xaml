@@ -42,10 +42,10 @@
                         x:Name="StopBtn"
                         Click="StopBtn_Click"/>
             </StackPanel>
-            <TextBlock Text="25:00"
+            <TextBlock Text="{Binding Seconds}"
                        Height="30"
                        x:Name="TimerText"
-                       />
+                       FontSize="20"/>
         </StackPanel>
 
         <ListBox x:Name="TaskListLb"

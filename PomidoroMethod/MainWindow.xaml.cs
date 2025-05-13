@@ -22,7 +22,9 @@ namespace PomidoroMethod
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TimeSpan _MyTime = new TimeSpan(0, 0, 25);
+        //private TimeSpan _MyTime = new TimeSpan(0, 0, 25);
+        private int Minutes = 0;
+        private int Seconds = 25;
         public ObservableCollection<TodoItem> Tasks { get; set; } = new ObservableCollection<TodoItem>();
         public MainWindow()
         {
@@ -72,7 +74,10 @@ namespace PomidoroMethod
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            for (int i = 25; i > 0; i--)
+            {
+                Seconds--;
+            }
         }
 
         private void StopBtn_Click(object sender, RoutedEventArgs e)
@@ -84,8 +89,6 @@ namespace PomidoroMethod
     {
         public string Title { get; set; }
         public bool IsDone { get; set; }
-        public DateTime? DueDate { get; set; }
-        public string Category { get; set; }
     }
     public class DoneToTextDecorationConverter : IValueConverter
     {
